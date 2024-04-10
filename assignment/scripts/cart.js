@@ -6,8 +6,12 @@ let basket = [];
 const maxItems = 5;
 
 function addItem(item) {
-  basket.push(item);
-  return true;
+  if (isFull()) {
+    return false;
+  } else {
+    basket.push(item);
+    return true;
+  }
 }
 
 console.log(`Items in basket: ${basket}`);
@@ -34,26 +38,45 @@ function empty() {
 empty();
 console.log(`Items in basket: ${basket}`);
 
-function isFull(){
-    if (basket.length >= maxItems){
-        return true;
-    } else {
-        return false;
-    }
+function isFull() {
+  if (basket.length >= maxItems) {
+    return true;
+  } else {
+    return false;
+  }
 }
 addItem('Milk');
 addItem('Milk');
 addItem('Milk');
 addItem('Milk');
 addItem('Milk');
-console.log(isFull())
+console.log(isFull());
 
-empty()
+empty();
 addItem('Milk');
 addItem('Milk');
 addItem('Milk');
 console.log(isFull());
 
+empty();
+
+console.log(`Adding bread: `, addItem('Bread'));
+console.log(`Items in basket: ${basket}`);
+
+console.log(`Adding Milk: `, addItem('Milk'));
+console.log(`Items in basket: ${basket}`);
+
+console.log(`Adding Eggs: `, addItem('Eggs'));
+console.log(`Items in basket: ${basket}`);
+
+console.log(`Adding Butter: `, addItem('Butter'));
+console.log(`Items in basket: ${basket}`);
+
+console.log(`Adding v: `, addItem('PB'));
+console.log(`Items in basket: ${basket}`);
+
+console.log(`Adding Jelly: `, addItem('Jelly'));
+console.log(`Items in basket: ${basket}`);
 
 // DO NOT MODIFY
 // Used for automated testing
