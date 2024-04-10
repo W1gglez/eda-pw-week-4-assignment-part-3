@@ -78,6 +78,24 @@ console.log(`Items in basket: ${basket}`);
 console.log(`Adding Jelly: `, addItem('Jelly'));
 console.log(`Items in basket: ${basket}`);
 
+function removeItem(item) {
+  if (basket.indexOf(item, 0) >= 0) {
+    let removed = basket.splice(basket.indexOf(item), 1).toString();
+    return removed;
+  } else {
+    return null;
+  }
+}
+
+console.log(`Removed: `, removeItem('Jelly'));
+console.log(`Items in basket: ${basket}`);
+
+console.log(`Removed: `, removeItem('Bread'));
+console.log(`Items in basket: ${basket}`);
+
+console.log(`Removed: `, removeItem('Eggs'));
+console.log(`Items in basket: ${basket}`);
+
 // DO NOT MODIFY
 // Used for automated testing
 try {
